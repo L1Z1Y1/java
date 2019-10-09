@@ -1,0 +1,28 @@
+package bcqd;
+public class PrintDifferentNumbers {
+	public static void main(String[] args){
+		System.out.println("Enter ten numbers: ");
+		int[] array=new int[10];
+		java.util.Scanner input=new java.util.Scanner(System.in);
+		String inputString=input.nextLine();
+		String stringArray[]=inputString.split(" ");
+		for (int i=0; i<stringArray.length; i++) {
+             array[i] = Integer.parseInt(stringArray[i]);}
+        /*把数组分成两部分，左边认为是满足要求的不重复的部分，初始为1个元素array[0];
+                  而右边是等待遍历的部分，不断遍历右边的元素。*/
+        int index=1;//用index来表示左边部分不重复的元素应该存放的下标
+        for (int i=1;i<array.length;i++) {
+        	int j;
+            for (j=0; j <index;j++) {//通过第二层循环遍历左边部分0到index的元素
+                if (array[j]==array[i]) {
+                    break;}}// 如果有元素和当前元素相等，说明是重复的，那么不处理；
+            if (j==index) {
+            	array[index++]=array[i];}}
+        /*否则，说明是不重复，那么插入到下标index的地方(index++)
+                  同样，遍历下来，不重复的元素被放到前面部分。*/
+        System.out.println("The number of distinct number is "+index);
+        for (int i=0;i<index;i++) {
+        	System.out.print(array[i]+" ");
+        }
+        }
+	}
