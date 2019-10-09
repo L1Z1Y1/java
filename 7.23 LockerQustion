@@ -1,0 +1,16 @@
+package bcqd;
+
+public class LockerQustion {
+	public static void main(String[] args){
+		boolean[] array=new boolean[100];
+		for(boolean i:array){
+			i=true;} 
+		for(int i=1;i<100;i++) {
+			for(int j=i;j<100;j=j+i) {
+				if(array[j]==true) {array[j]=false;}
+				else {array[j]=true;}}}
+		for(int i=0;i<100;i++) {
+			if(array[i]==true) {
+			System.out.print((i)+" ");}}
+		}
+	}
