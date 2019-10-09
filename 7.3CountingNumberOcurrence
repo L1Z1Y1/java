@@ -1,0 +1,24 @@
+package bcqd;
+import java.util.Arrays;
+public class CountingNumberOcurrence {
+	public static void main(String[] args){
+		java.util.Scanner input=new java.util.Scanner(System.in);
+		System.out.println("Enter the items between 1 and 100: ");
+		int[] number=new int[1000];
+		int[] time=new int[1000];
+		int i=0;
+		int num=0;
+		while ( ( number[i++]=input.nextInt() )!=0 ) {
+	            num++;}
+		Arrays.sort(number);
+		for(i=0;i<number.length;i++){
+		    if(number[i]!=0) {
+		    	time[number[i]]++;}}
+		for(i=0;i<time.length;i++){
+		    if(time[i]==1) {
+		    	System.out.println("number "+i+" occurs "+time[i]+" time");}
+		    else if(time[i]>1) {
+		    	System.out.println("number "+i+" occurs "+time[i]+" times");}
+		    }
+	}
+}
