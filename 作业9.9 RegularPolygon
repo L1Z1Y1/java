@@ -1,0 +1,76 @@
+package bcqd9;
+
+class polygon{
+    private int n=3;//多边形的边数，默认为3
+    private double side=1;//多边形的边长，默认为1
+    private  double x=0;//多边形中点的x坐标，默认为0
+    private double y=0;//多边形中点的y坐标，默认为0
+    
+    //带默认值的正多边形的无参构造方法
+    polygon(){
+    }
+    
+    //带指定边数和边长、中心在（0,0）的正多边形的构造方法
+    polygon(int newN,int newS){
+    	n=newN;
+    	side=newS;
+    	x=0;y=0;
+    	}
+    
+    //带指定边数和边长、中心在（x,y）的正多边形的构造方法
+ 	polygon(int newN,int newS,double newX,double newY){
+      n=newN;
+      side=newS;
+      x=newX;y=newY;   
+      }
+ 	
+ 	//修改器
+ 	public  void setN(int newN){
+ 		n=newN;
+ 		}
+ 	public void setSide(double newS){
+ 		side=newS;
+ 		}
+ 	public  void setX(double newX){
+ 		x=newX;
+ 		}
+ 	public  void setY(double newY){
+ 		y=newY;
+ 		}
+ 	
+ 	//访问器
+ 	public  int getN(){
+ 		return n;
+ 		}
+ 	public  double getSide(){
+ 		return side;
+ 		}
+ 	public  double getX(){
+ 		return x;
+ 		}
+ 	public  double getY(){
+ 		return y;
+ 		}
+ 	
+ 	//返回多边形周长
+ 	public double getPerimeter(){
+ 		return n*side;
+ 		}
+ 	//返回多边形面积
+ 	public double getArea(){
+ 		return (n*side*side)/(4*Math.tan(getPerimeter()/n));
+ 		}
+ 	}
+
+public class RegularPolygon {
+	public static void main(String[] args){
+		polygon r1=new polygon();
+		System.out.println("对象一 周长："+r1.getPerimeter()+"  面积："+r1.getArea());
+     
+		polygon r2=new polygon(6,4);
+		System.out.println("对象二 周长："+r2.getPerimeter()+" 面积："+r2.getArea());
+     
+		polygon r3=new polygon(10,4,5.6,7.8);
+		System.out.println("对象三 周长："+r3.getPerimeter()+" 面积："+r3.getArea()); 
+		}   
+	}
