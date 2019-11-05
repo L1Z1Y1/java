@@ -33,7 +33,7 @@ public class SimpleGeometricObject {
 	}
 	
 	/**Set a new filled*/
-	public void setFilled(bollean filled) {
+	public void setFilled(boolean filled) {
 		this.filled=filled;
 	}
 	
